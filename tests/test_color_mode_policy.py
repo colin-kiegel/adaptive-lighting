@@ -38,7 +38,10 @@ def test_equivalent_color_readback(kelvin, reverse):
 
     # Existing behavior, including Hue scene mode changes, is the default.
     assert _attributes_have_changed(
-        "light.test", old.copy(), new.copy(), Context(),
+        "light.test",
+        old.copy(),
+        new.copy(),
+        Context(),
     ) == (LightControlAttributes.COLOR)
     assert (
         _attributes_have_changed(
@@ -88,7 +91,10 @@ def test_observed_homekit_readback():
     old = {ATTR_BRIGHTNESS: 115, ATTR_COLOR_TEMP_KELVIN: 2127}
     new = {ATTR_BRIGHTNESS: 114.75, ATTR_RGB_COLOR: (255, 142, 28)}
     assert _attributes_have_changed(
-        "light.test", old.copy(), new.copy(), Context(),
+        "light.test",
+        old.copy(),
+        new.copy(),
+        Context(),
     ) == (LightControlAttributes.COLOR)
     assert (
         _attributes_have_changed(
